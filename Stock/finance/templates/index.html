@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>Total</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for holding in holdings %}
+                <tr>
+                    <td>{{ holding["Symbol"] }}</td>
+                    <td>{{ holding["Name"] }}</td>
+                    <td>{{ holding["Shares"] }}</td>
+                    <td>{{ holding["Price"] }}</td>
+                    <td>{{ holding["Total"] }}</td>
+                    <td>
+                    </td>
+                </tr>
+            {% endfor %}
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>Cash: </td>
+                <td>{{ cash }}</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>Total: </td>
+                <td> {{ cash + grand_total}}</td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}

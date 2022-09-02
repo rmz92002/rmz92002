@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+            document.addEventListener('DOMContentLoaded', function(){
+                let right_button = document.querySelector('#right');
+                let wrong_button = document.querySelectorAll('.wrong');
+
+            right_button.addEventListener('click', function(){
+                right_button.style.backgroundColor= "green";
+            });
+
+            for(let i = 0; i< wrong_button.length; i++)
+            {
+                wrong_button[i].addEventListener('click', function(){
+                        wrong_button[i].style.backgroundColor = "red";
+                });
+            }
+            function greet(){
+                let name = document.querySelector('#name').value;
+                if(name == "soccer")
+                {
+                    submit.style.backgroundColor = "green";
+                }
+                else
+                {
+                    submit.style.backgroundColor = "red";
+                }
+            }
+
+            document.querySelector('form').addEventListener('submit', greet);
+            });
+
+
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <h3> what do I like</h3>
+                <button class = "wrong" type="button">baseball</button>
+                <button id = "right" type="button">basketball</button>
+                <button class = "wrong" type="button">soccer</button>
+                <button class = "wrong" type="button">hockey</button>
+                <!-- TODO: Add multiple choice question here -->
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <h3>What does Ronaldo play? </h3>
+                <!-- TODO: Add free response question here -->
+               <form>
+                <input autocomplete="off" autofocus id="name" placeholder="Name" type="text">
+                <button id =submit>submit</button>
+            </form>
+            </div>
+        </div>
+    </body>
+</html>
